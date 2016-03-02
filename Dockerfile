@@ -2,4 +2,8 @@ FROM golang
 
 RUN go get github.com/calavera/docker-volume-glusterfs
 
-CMD ["go-wrapper", "run"]
+EXPOSE 7878
+
+ENTRYPOINT ["docker-volume-glusterfs"]
+
+CMD ["-help"]
